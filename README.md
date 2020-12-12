@@ -4,7 +4,11 @@ This repository contains the source code for a multiplayer game, that was part o
 
 ## How to play
 
-URL for playing the game: https://mastermind-multiplayer.herokuapp.com/
+URL for playing the game with a friend of yours online: https://mastermind-multiplayer.herokuapp.com/
+
+## How to run locally
+
+In case you want to run the server locally, it requires ``node express``. You can then run with ``npm start`` command and the server will listen to ``http://localhost:5000/``.
 
 ## Splash Screen
 
