@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html charset=UTF-8">
+
+    <title>Mastermind</title>
+
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/splash.css" rel="stylesheet">
+    <style type="text/css"></style>
+  </head>
+
+  <body>
+
+    <div class="alert"> <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+      This game requires window width greater than 1350 pixels! Please maximize this window or change your screens resolution or zoom-out your browser.
+    </div>
+
+    <h1>MASTERMIND</h1>
+    <h2>The ultimate 2-player game</h2>
+          
+    <p><br>
+    </p>
+    <table>
+      <tbody>
+        <tr>
+          <td>
+	          Games until now: <%= gamesInitialized %><br>
+            <br>
+            Players waiting to play: <%= playersWaiting %><br>
+            <br>
+            Games Aborted: <%= gamesAborted %><br>
+            <br>
+            <br>
+	          <form action="/play" method="get">
+          	  <button type="submit">Play Now</button>
+            </form>
+            <br>
+          </td>
+          <td>
+             <img src="images\mastermind_small.png" alt="Mastermind_Image" title="Mastermind_Image">
+	        </td>
+          <td>
+	          How to Play <br>
+            <br>
+            Players play a series of 6 games, interchanging the roles of
+            CodeMaker and CodeBreaker.<br>
+            <br>
+            The codemaker chooses a pattern of four code coloured pegs.
+            (Duplicates and blanks are not allowed.) The chosen pattern is
+            placed in the four holes, visible only to the codemaker. <br>
+            The codebreaker tries to guess the pattern, in both order and
+            colour, within ten turns. Each guess is made by placing a row of
+            code pegs on the decoding board. <br>
+            Once placed, the codemaker provides feedback by placing from zero to
+            four key pegs in the small holes of the row with the guess. A black
+            key peg is placed for each code peg from the guess which is correct
+            in both color and position. A white key peg indicates the existence
+            of a correct color code peg placed in the wrong position. <br>
+            <br>
+            Guesses and feedback continue until either the codebreaker guesses
+            correctly, or ten incorrect guesses are made. The codemaker gets one
+            point for each guess the codebreaker makes. An extra point is earned
+            by the codemaker if the codebreaker is unable to guess the exact
+            pattern within 10 turns. The winner is the one who has the most
+            points after the 6 games are played.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><br>
+    </p>
+  </body>
+
+ <script>
+
+   checkCookie();
+   
+   function setCookie(cookieName, cookieValue) {
+     var expDate = "Thu, 18 Jul 2020 12:00:00 UTC";
+     document.cookie = cookieName + "=" + cookieValue + ";" + expDate;
+   }
+
+  function getCookie(cookieName) {
+    var name = cookieName + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function checkCookie() {
+    var pastVisits = getCookie("visits");
+    var newVisits = 0;
+    if (pastVisits != "") {
+      newVisits = parseInt(pastVisits);
+      newVisits += 1;
+      setCookie("visits", newVisits);
+      alert("Welcome again user. You have visited this game " + pastVisits + " times!");
+    } else {
+      newVisits += 1;
+      setCookie("visits", newVisits);
+      alert("Welcome user. This is the first time you visit this game!");
+    }
+  }
+  </script>
+
+</html>

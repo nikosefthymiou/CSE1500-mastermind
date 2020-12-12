@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta http-equiv="content-type" content="text/html charset=UTF-8">
+    <title>Mastermind</title>
+
+    <link href="stylesheets/style.css" rel="stylesheet">
+    <link href="stylesheets/game.css" rel="stylesheet">
+
+    <style type="text/css"></style>
+
+  </head>
+
+  <body>
+    <h1 id="_heading-1">Wait for second Player... /
+      You play now!</h1>
+    <h2 id="_heading-2">Your are Player 1 and your
+      role is 'Codemaker'</h2>
+    <div id="_label-instr-1" class="nm-label label-instr">Codebreaker,
+      click to select each peg's colour on the active row of the board</div>
+    <div id="_label-instr-3" class="nm-label label-instr">Codemaker, click
+      to place white or black key pegs appropriately</div>
+    <div id="_label-instr-2" class="nm-label label-instr">Codemaker, to define
+      your code, click to select each peg's colour on code board</div>
+    <div id="_label-score-1" class="nm-label">Game:
+      0 out of 6</div>
+    <div id="_label-score-2" class="nm-label">Player
+      1 points: 0</div>
+    <div id="_label-score-3" class="nm-label">Player
+      2 points: 0</div>
+    <div id="_frame-large"></div>
+    <div id="_frame-small"></div>
+    <div id="_frame-code"></div>
+    <div id="_rect-1" class="vert-rectangle ">
+      <div id="_lc-11" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-12" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-13" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-14" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-2" class="vert-rectangle">
+      <div id="_lc-21" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-22" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-23" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-24" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-3" class="vert-rectangle">
+      <div id="_lc-31" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-32" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-33" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-34" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-4" class="vert-rectangle">
+      <div id="_lc-41" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-42" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-43" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-44" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-5" class="vert-rectangle">
+      <div id="_lc-51" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-52" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-53" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-54" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-6" class="vert-rectangle">
+      <div id="_lc-61" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-62" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-63" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-64" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-7" class="vert-rectangle">
+      <div id="_lc-71" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-72" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-73" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-74" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-8" class="vert-rectangle">
+      <div id="_lc-81" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-82" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-83" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-84" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-9" class="vert-rectangle">
+      <div id="_lc-91" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-92" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-93" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-94" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-10" class="vert-rectangle">
+      <div id="_lc-101" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-102" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-103" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-104" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_rect-11" class="vert-rectangle">
+      <div id="_lc-111" class="large-cycle large-cycle-1"></div>
+      <div id="_lc-112" class="large-cycle large-cycle-2"></div>
+      <div id="_lc-113" class="large-cycle large-cycle-3"></div>
+      <div id="_lc-114" class="large-cycle large-cycle-4"></div>
+    </div>
+    <div id="_square-1" class="small-square ">
+      <div id="_sc-11" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-12" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-13" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-14" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-2" class="small-square">
+      <div id="_sc-21" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-22" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-23" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-24" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-3" class="small-square">
+      <div id="_sc-31" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-32" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-33" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-34" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-4" class="small-square">
+      <div id="_sc-41" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-42" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-43" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-44" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-5" class="small-square">
+      <div id="_sc-51" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-52" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-53" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-54" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-6" class="small-square">
+      <div id="_sc-61" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-62" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-63" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-64" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-7" class="small-square">
+      <div id="_sc-71" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-72" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-73" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-74" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-8" class="small-square">
+      <div id="_sc-81" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-82" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-83" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-84" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-9" class="small-square">
+      <div id="_sc-91" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-92" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-93" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-94" class="small-cycle small-cycle-lr"></div>
+    </div>
+    <div id="_square-10" class="small-square">
+      <div id="_sc-101" class="small-cycle small-cycle-ul"></div>
+      <div id="_sc-102" class="small-cycle small-cycle-ur"></div>
+      <div id="_sc-103" class="small-cycle small-cycle-ll"></div>
+      <div id="_sc-104" class="small-cycle small-cycle-lr"></div>
+    </div>
+
+    <div id="_color-palette" class="palette">
+      <div id="_c-1" class="color-pal"></div>
+      <div id="_c-2" class="color-pal"></div>
+      <div id="_c-3" class="color-pal"></div>
+      <div id="_c-4" class="color-pal"></div>
+      <div id="_c-5" class="color-pal"></div>
+      <div id="_c-6" class="color-pal"></div>
+      <div id="_c-7" class="color-pal"></div>
+      <div id="_c-8" class="color-pal"></div>
+      <div id="_c-9" class="color-pal"></div>
+    </div>
+
+    <button class="button_submit"
+      id="submit-button"
+      type="button">
+      Submit your code !
+    </button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="javascripts/config.js" defer></script>
+    <!-- <script src="javascripts/statuses.js" defer></script> -->
+    <script src="javascripts/messages.js" defer></script>
+    <script src="javascripts/interactions.js" defer></script>
+
+  </body>
+</html>
